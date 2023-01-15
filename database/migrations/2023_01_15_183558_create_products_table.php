@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('subcategory_id')->references('id')->on('subcategories');
             $table->foreignId('brand_id')->references('id')->on('brands');
             $table->integer('quantity')->nullable();
+            $table->enum('status', [\App\Models\Product::BORRADOR, \App\Models\Product::PUBLICADO])->default(\App\Models\Product::BORRADOR);
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class xCategoryFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,7 +14,7 @@ class xCategoryFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'image' => 'categories/' . $this->faker->image(storage_path('app/public/categories'), 640, 480, null, false)
         ];
     }
 }

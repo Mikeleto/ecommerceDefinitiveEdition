@@ -6,7 +6,7 @@ use App\Models\Product;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Database\Seeder;
 
-class SizeSeeder extends Seeder
+class ColorProductSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,15 +17,23 @@ class SizeSeeder extends Seeder
     {
         $products = Product::whereHas('subcategory', function(\Illuminate\Database\Eloquent\Builder $query){
             $query->where('color', true)
-                ->where('size', true);
+                ->where('size', false);
         })->get();
-        $sizes = ['Talla S', 'Talla M', 'Talla L'];
         foreach ($products as $product) {
-            foreach ($sizes as $size) {
-                $product->sizes()->create([
-                    'name' => $size
-                ]);
-            }
+            $product->colors()->attach([
+                1 => [
+                    'quantity' => 10
+                ],
+                2 => [
+                    'quantity' => 10
+                ],
+                3 => [
+                    'quantity' => 10
+                ],
+                4 => [
+                    'quantity' => 10
+                ]
+            ]);
         }
     }
 }
