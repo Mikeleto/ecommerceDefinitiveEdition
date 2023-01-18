@@ -5,7 +5,6 @@ namespace Database\Factories;
 use App\Models\Subcategory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-
 class ProductFactory extends Factory
 {
     /**
@@ -20,6 +19,7 @@ class ProductFactory extends Factory
         $category = $subcategory->category;
         $brand = $category->brands->random();
         return [
+
             'name' => $name,
             'slug' => Str::slug($name),
             'description' => $this->faker->text(),

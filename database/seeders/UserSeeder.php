@@ -19,5 +19,4 @@ class UserSeeder extends Seeder
             'email' => 'carlos@test.com',
         ]);
     }
-
 }

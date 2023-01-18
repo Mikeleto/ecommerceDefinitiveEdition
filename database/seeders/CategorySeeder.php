@@ -7,10 +7,8 @@ use App\Models\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
-
 class CategorySeeder extends Seeder
 {
-
     /**
      * Run the database seeds.
      *
@@ -18,6 +16,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
+
         $categories = [
             [
                 'name' => 'Celulares y tablets',
