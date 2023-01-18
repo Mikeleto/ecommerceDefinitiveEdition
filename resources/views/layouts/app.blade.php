@@ -12,7 +12,7 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
 
 
         @livewireStyles
@@ -28,7 +28,7 @@
 
             <header>
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h1 class="text-black-500">Hola mi gente</h1>
+                    <h1 class="text-orange-500">Hola Mundoq</h1>
                 </div>
             </header>
 
@@ -40,5 +40,32 @@
         @stack('modals')
 
         @livewireScripts
+
+        <script>
+            function dropdown(){
+                return {
+                    open: false,
+                    show(){
+                        if(this.open){
+                            this.open = false;
+                            document.getElementsByTagName('html')[0].style.overflow = 'auto'
+                        }else{
+                            this.open = true;
+                            document.getElementsByTagName('html')[0].style.overflow = 'hidden'
+                        }
+                    },
+                    close(){
+                        this.open = false;
+                        document.getElementsByTagName('html')[0].style.overflow = 'auto'
+                    }
+                }
+            }
+        </script>
     </body>
 </html>
+
+
+
+
+
+
