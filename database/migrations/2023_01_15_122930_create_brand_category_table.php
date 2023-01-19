@@ -11,8 +11,7 @@ class CreateBrandCategoryTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('brand_category', function (Blueprint $table) {
             $table->id();
             $table->foreignId('brand_id')->references('id')->on('brands');
@@ -26,8 +25,7 @@ class CreateBrandCategoryTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('brand_category');
     }
 }

@@ -14,9 +14,7 @@ class CategorySeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-
+    public function run() {
         $categories = [
             [
                 'name' => 'Celulares y tablets',

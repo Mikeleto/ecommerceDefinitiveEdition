@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,8 +12,7 @@ class CreateProductsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -22,8 +22,7 @@ class CreateProductsTable extends Migration
             $table->foreignId('subcategory_id')->references('id')->on('subcategories');
             $table->foreignId('brand_id')->references('id')->on('brands');
             $table->integer('quantity')->nullable();
-            $table->enum('status', [\App\Models\Product::BORRADOR, \App\Models\Product::PUBLICADO])->default(\App\Models\Product::BORRADOR);
-
+            $table->enum('status', [Product::BORRADOR, Product::PUBLICADO])->default(Product::BORRADOR);
             $table->timestamps();
         });
     }
@@ -33,8 +32,7 @@ class CreateProductsTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('products');
     }
 }

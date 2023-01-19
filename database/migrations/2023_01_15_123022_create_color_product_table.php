@@ -11,8 +11,7 @@ class CreateColorProductTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('color_product', function (Blueprint $table) {
             $table->id();
             $table->foreignId('color_id')->references('id')->on('colors');
@@ -27,8 +26,7 @@ class CreateColorProductTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('color_product');
     }
 }

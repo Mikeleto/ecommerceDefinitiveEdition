@@ -11,8 +11,7 @@ class CreateBrandsTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -25,8 +24,7 @@ class CreateBrandsTable extends Migration
      *
      * @return void
      */
-    public function down()
-    {
+    public function down() {
         Schema::dropIfExists('brands');
     }
 }
